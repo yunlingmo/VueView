@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <div class="body">
-      <div class="background-panel">背景图片</div>
-      <router-view/>
+    <div class="map-back">背景图片</div>    
+    <div>
+      <Header></Header>
+      <div class="content-box" @click="xx">
+        <router-view/>       
+      </div>
     </div>
   </div>
 </template>
@@ -15,10 +17,36 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  methods: {
+    xx(){
+      console.log('xxxxxxxxxxxxxx')
+    }
   }
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+#app{
+  height: 1080px;
+  position: relative;
+  .map-back{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url('./static/images/map_bg.jpg');
+    background-size: 100% 100%;
+  }
+  .content-box{
+    height: 875px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border: 2px solid red;
+  }
+}
 </style>
