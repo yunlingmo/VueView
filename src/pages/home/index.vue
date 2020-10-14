@@ -1,19 +1,21 @@
 <template>
     <div class="mian-box home-box">
-        <div class="left-panel">左边</div>
+        <div class="left-panel">
+            <div class="panel">
+                <div class="panel-title">标题</div>
+            </div>
+        </div>
         <div class="right-panel">右边</div>
     </div>
 </template>
 
 <style lang="less" scoped>
-    .left-panel, .right-panel{
-        width: 300px;
-        border: 20px solid pink;
-    }
+    @import '@/assets/style/layout.less';
     .left-panel{
-        float: left;
+        .panelBox(@width:560px);
+        .panel(@height:250px);
     }
     .right-panel{
-        float: right;
+        .panelBox(@position: right; @width:560px);
     }
 </style>

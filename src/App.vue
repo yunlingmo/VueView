@@ -3,7 +3,7 @@
     <div class="map-back">背景图片</div>    
     <div>
       <Header></Header>
-      <div class="content-box" @click="xx">
+      <div class="content-box">
         <router-view/>       
       </div>
     </div>
@@ -18,11 +18,7 @@ export default {
   components: {
     Header
   },
-  methods: {
-    xx(){
-      console.log('xxxxxxxxxxxxxx')
-    }
-  }
+  methods: {}
 }
 </script>
 

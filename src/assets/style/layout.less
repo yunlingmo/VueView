@@ -1,0 +1,42 @@
+.panelBox(@position:left,@width:550px) {
+    height: 100%;
+    width: @width;
+    float: @position;
+}
+
+.panel(@height:296px) {
+    height: @height;
+    background: rgba(2, 15, 43, 0.7);
+    .panel-title{
+        height: 24px;
+        font-size: 24px;
+        margin-top: 18px;
+        color: #fff;
+        display: flex;
+        &::before{
+            content: '';
+            width: 4px;
+            height: 100%;
+            margin-right: 20px;
+            display: inline-block;
+            background: #4F9EFD;
+        }
+    }
+}
+
+// @mixin panel($bgcolor:#fff,$padding:0,$margin:20px 0,$height:112px,$textPadding:0 32px,$color:#333,$size:32px) {
+//     background-color: $bgcolor;
+//     margin:$margin;
+//     padding:$padding;
+//     >h4{
+//       height:$height;
+//       line-height:$height;
+//       padding:$textPadding;
+//       text-align: center;
+//       white-space: nowrap;
+//       text-overflow: ellipsis;
+//       overflow: hidden;
+//       color:$color;
+//       font-size: $size;
+//     }
+//   }
