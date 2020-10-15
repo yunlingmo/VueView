@@ -14,3 +14,18 @@
 
 ## 2020.10.14
 1、css模块化 layout.css
+
+## 2020.10.15
+1、封装共同面板组件 panel.vue
+    1) 引入 elementUI
+    2) 在main.js中挂在elementUI
+2、日历面板组件封装
+
+
+
+
+
+
+
+********* 使用的js类库 *********
+1、MonentJS （时间类库）

@@ -6,37 +6,34 @@
 
 .panel(@height:296px) {
     height: @height;
+    display: flex;
+    flex-direction: column;
     background: rgba(2, 15, 43, 0.7);
-    .panel-title{
+    .panel-top{
         height: 24px;
-        font-size: 24px;
-        margin-top: 18px;
-        color: #fff;
+        padding-top: 18px;
+        padding-right: 20px;
         display: flex;
-        &::before{
-            content: '';
-            width: 4px;
-            height: 100%;
-            margin-right: 20px;
-            display: inline-block;
-            background: #4F9EFD;
+        align-items: center;
+        justify-content: space-between;
+        h4{
+            font-size: 24px;
+            color: #fff;
+            display: flex;
+            &::before{
+                content: '';
+                width: 4px;
+                height: 24px;
+                margin-right: 20px;
+                display: inline-block;
+                background: #4F9EFD;
+            }
+
         }
     }
+    .panel-body{
+        padding: 18px 20px;
+        height: 100px;
+        flex: 1;
+    }
 }
-
-// @mixin panel($bgcolor:#fff,$padding:0,$margin:20px 0,$height:112px,$textPadding:0 32px,$color:#333,$size:32px) {
-//     background-color: $bgcolor;
-//     margin:$margin;
-//     padding:$padding;
-//     >h4{
-//       height:$height;
-//       line-height:$height;
-//       padding:$textPadding;
-//       text-align: center;
-//       white-space: nowrap;
-//       text-overflow: ellipsis;
-//       overflow: hidden;
-//       color:$color;
-//       font-size: $size;
-//     }
-//   }
