@@ -2,7 +2,7 @@
   <div id="app">
     <div class="map-back">背景图片</div>    
     <div>
-      <Header></Header>
+      <panel-header></panel-header>
       <div class="content-box">
         <router-view/>       
       </div>
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import panelHeader from './components/panelHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    panelHeader
   },
   methods: {}
 }

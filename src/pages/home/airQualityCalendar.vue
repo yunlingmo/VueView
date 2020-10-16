@@ -1,20 +1,20 @@
 <template>
-    <panel class="airquality-panel" panelTitle="日历模块">
+    <Panel class="airquality-panel" panelTitle="日历模块">
         <template v-slot:header>
             <month-select @monthChange="monthChange"></month-select>
         </template>        
         <calendar :monthValue="monthValue"></calendar>
-    </panel>
+    </Panel>
 </template>
 
 <script>
-    import panel from '@/components/panel'
+    // import panel from '@/components/panel'
     import monthSelect from '@/components/monthSelect'
     import calendar from './calendar'
     export default{
         name: 'airQualityCalendar',
         components: {
-            panel,
+            // panel,
             monthSelect,
             calendar   
         },

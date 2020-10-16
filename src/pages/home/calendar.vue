@@ -1,6 +1,6 @@
 <template>
     <div class="calendar-panel">
-        <el-calendar class="calender-box" :value="monthValue">
+        <el-calendar :first-day-of-week="7" class="calender-box" :value="monthValue">
             <template
                 slot="dateCell"
                 slot-scope="{date, data}">
