@@ -1,18 +1,19 @@
-let colors = ['#BEDC6E', '#FA8C8C', '#FAAAC8', '#FAC8C8','#FFFFE6', '#6E6464'];
-let c_axisLine = 'rgba(76,180,231,0.33)';
+let colors = ["#F76F01", "#00FFFF", "#00FFA8", "#9F17FF", "#FFE400", "#F76F01", "#01A4F7", "#FE2C8A"];
 
 /******** 图表的公共属性 ******* */
-let com_charts = {
+export const com_charts = {
     color: colors,
     // 图表框
     grid: {
-        top: '25%',
-        bottom: '10%',
+        left: "5%",
+        top: "25%",
+        right: "0%",
+        bottom: "0%",
         containLabel: true  // 区域是否包含刻度值
     },
     // 全局字体样式
     textStyle: {
-        fontFamily: 'PingFang SC, sans-serif',
+        fontFamily: 'CHINESE-BOLD',
         fontSize: 16
     },
     // 提示框
@@ -23,40 +24,38 @@ let com_charts = {
         },
     },
     // 图例
-    legend: {
-        itemWidth: 20,
+    legend: {        
+        itemWidth: 10,
         itemHeight: 10,
+        icon: "circle",
+        right: 0,
+        top: 0,
         inactiveColor: '#666',  // 不选中的样式
         lineHeight: 30,
         textStyle: {
-            color: colors[0],
             fontSize: 16,
+            fontFamily: 'CHINESE-BOLD',
+            color: 'rgba(239, 245, 255, 0.6)'
         }
     },
 };
 
 /***********  直角坐标系坐标轴  ******* */
-let com_axis = {
-    // 标签名称
-    axisLabel: {
-        color: colors[0],
-        fontSize: 18,
-    },
+export const com_axis = {
     //坐标轴名称距离
     nameGap: 16,
     // 坐标轴名称显示位置
     nameLocation: 'end',
     // 坐标轴名称字体样式
     nameTextStyle: {
-        color: colors[0],
-        fontSize: 18
+        align: "right",
+        fontSize: 16,
+        color: 'rgba(165, 182, 212, 0.6)',
+
     },
     // 坐标轴
     axisLine: {
-        show: true,
-        lineStyle: {
-            color: 'rgba(76,180,231,0.33)'
-        }
+        show: false
     },
     // 刻度线
     axisTick: {
@@ -70,9 +69,19 @@ let com_axis = {
             tyle: 'dashed'
         }
     },
+    // 标签名称
+    axisLabel: {
+      textStyle: {
+        color: "rgba(239, 245, 255, 0.6)", //坐标的字体颜色
+        fontSize: 18,
+        fontFamily: 'NUM-WORD'
+      },
+    },
     // 坐标轴两边留白策略
     boundaryGap: true
 }
+
+
 
 /************ 折线图公共属性 ********** */
 export const opt_line = Object.assign({}, com_charts, {

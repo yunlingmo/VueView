@@ -34,6 +34,7 @@
 <style lang="less" scoped>
     @import '@/assets/style/layout.less';
     .airquality-panel{
-        .panel(@height:300px);
+        .panel(@height:230px);
+        flex-grow: 1;
     }
 </style>

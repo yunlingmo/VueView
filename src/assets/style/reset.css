@@ -22,7 +22,7 @@ center, u, b, i {
     font-family: CHINESE-BOLD;
     vertical-align: baseline
 }
-html, body{
+html, body, #app{
     width: 100%;
     height: 100%;
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="map-back">背景图片</div>    
-    <div>
+    <div class="body-box">
       <panel-header></panel-header>
       <div class="content-box">
         <router-view/>       
@@ -24,10 +24,9 @@ export default {
 
 <style lang="less" scoped>
 #app{
-  height: 1080px;
   position: relative;
   .map-back{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -36,13 +35,15 @@ export default {
     background-image: url('./static/images/map_bg.jpg');
     background-size: 100% 100%;
   }
-  .content-box{
-    height: 875px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    border: 2px solid red;
+  .body-box{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .content-box{
+      height: 850px;
+      margin: 20px;
+    }
   }
 }
 </style>
