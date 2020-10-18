@@ -1,4 +1,4 @@
-export const pieChart = function({title,color,data,radiu,centerData}) {
+export const pieChart = function({title,color,data,radiu,centerData, labelShow=true}) {
     const colors = color || ["#F76F01", "#00FFFF", "#00FFA8", "#9F17FF", "#FFE400", "#F76F01", "#01A4F7", "#FE2C8A"];
     const radius = radiu || ['50%', '70%'];
     const option = {
@@ -39,6 +39,7 @@ export const pieChart = function({title,color,data,radiu,centerData}) {
                 },
                 label: {
                     normal: {
+                        show: labelShow,
                         formatter: "{per|{d}%} ",
                         rich: {
                             per: {

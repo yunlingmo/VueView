@@ -6,17 +6,20 @@
       <div class="content-box">
         <router-view/>       
       </div>
+      <panel-footer></panel-footer>
     </div>
   </div>
 </template>
 
 <script>
 import panelHeader from './components/panelHeader.vue'
+import panelFooter from './components/panelFooter.vue'
 
 export default {
   name: 'App',
   components: {
-    panelHeader
+    panelHeader,
+    panelFooter
   },
   methods: {}
 }

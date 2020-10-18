@@ -1,4 +1,4 @@
-let colors = ["#F76F01", "#00FFFF", "#00FFA8", "#9F17FF", "#FFE400", "#F76F01", "#01A4F7", "#FE2C8A"];
+let colors = ['#509EFD','#7268D0', '#FFDE78', '#6CE5A2', '#F09650'];
 
 /******** 图表的公共属性 ******* */
 export const com_charts = {
@@ -19,8 +19,7 @@ export const com_charts = {
     // 提示框
     tooltip: {
         textStyle: {
-            fontSize: 16,
-            color: colors[0]
+            fontSize: 16
         },
     },
     // 图例
@@ -79,6 +78,19 @@ export const com_axis = {
     },
     // 坐标轴两边留白策略
     boundaryGap: true
+}
+
+export const bar_itemStyle = {
+    normal: {
+        label: {
+        show: true,
+        position: "top",
+            textStyle: {
+                fontSize: "18",
+                fontFamily: "NUM-WORD",
+            }
+        }
+    }
 }
 
 

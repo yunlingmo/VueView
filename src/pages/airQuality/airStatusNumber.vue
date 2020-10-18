@@ -1,25 +1,23 @@
 <template>
-    <Panel class="fireProportion-panel" panelTitle="火点类型占比">      
-        <div id="fireChartId"></div>
+    <Panel class="airStatus-panel" panelTitle="空气质量天数">      
+        <div id="airStatusNumberChartId"></div>
     </Panel>
 </template>
 
 <script>
     import { pieChart } from '@/assets/js/pieChart'
     export default{
-        name: 'fireProportion',
+        name: 'airStatusNumber',
         components: {},
         data() {
             return {
                 fireChart: null,
                 title: '',
                 data:[
-                        {value: 335, name: '直接访问'},
-                        {value: 310, name: '邮件营销'},
-                        {value: 234, name: '联盟广告'},
-                        {value: 135, name: '视频广告'},
-                        {value: 1548, name: '搜索引擎'}
-                    ]
+                    {value: 335, name: '优秀天数'},
+                    {value: 310, name: '良好天数'},
+                    {value: 234, name: '严重天数'}
+                ]
             }
         },
         mounted() {
@@ -30,13 +28,14 @@
                 const params = {
                     title: this.title,
                     data: this.data,
-                    centerData: 50,
-                    color: ['#7268D0', '#FFDE78', '#6CE5A2', '#F09650','#509EFD'],
+                    centerData: '360',
+                    color: ['#00EA9C','#FBDE88','#629EF6'],
+                    labelShow: false
                 }
                 const option = pieChart(params);
                 console.log('option',option);
                 this.fireChart = this.$echarts.init(
-                    document.getElementById("fireChartId")
+                    document.getElementById("airStatusNumberChartId")
                 );
                 this.fireChart.setOption(option);
             }
@@ -46,11 +45,11 @@
 
 <style lang="less" scoped>
     @import '@/assets/style/layout.less';
-    .fireProportion-panel{
+    .airStatus-panel{
         .panel(@height:200px);
         margin-top: 10px;
         flex-grow: 1;
-        #fireChartId{
+        #airStatusNumberChartId{
             height: 100%;
         }
     }

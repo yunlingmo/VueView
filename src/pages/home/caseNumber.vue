@@ -20,7 +20,7 @@
             initChart() {
                 const baseOption = Object.assign(com_charts,{});
                 const XAxis = Object.assign({},com_axis,{
-                    data: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+                    data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
                     axisLabel: {
                         interval: 0,
                         textStyle: {
@@ -29,7 +29,8 @@
                             fontFamily: 'NUM-WORD'
                         },
                         formatter: function (name) {
-                            return name + " {a|月}";
+                            const newName = name.replace('月', '');
+                            return newName + " {a|月}";
                         },
                         rich: {
                             a: {
@@ -57,7 +58,6 @@
                     }
                 ]
                 const option = Object.assign({},baseOption,{xAxis: [XAxis]}, {yAxis: [YAxis]},{series});
-                console.log('option',option);
                 this.caseNumberChart = this.$echarts.init(
                     document.getElementById("caseNumberChartId")
                 );

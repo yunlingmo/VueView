@@ -1,13 +1,13 @@
 <template>
-    <Panel class="yearly-output" panelTitle="年产量">
-        <div id="outputChartId"></div>
+    <Panel class="air-survey" panelTitle="空气质量概况">
+        <div id="airSurveyChartId"></div>
     </Panel>
 </template>
 
 <script>
-    import { com_charts, com_axis } from '@/assets/js/chartsCom'
+    import { com_charts, com_axis, bar_itemStyle } from '@/assets/js/chartsCom'
     export default{
-        name: 'yearlyOutput',
+        name: 'airSurvey',
         data(){
             return {
                 yearlyOutputChart: null,
@@ -18,9 +18,12 @@
         },
         methods: {   
             initChart() {
-                const baseOption = Object.assign(com_charts,{});
+                // const 
+                const baseOption = Object.assign(com_charts,{
+                    color: ['#509EFD', '#00E9EA']
+                });
                 const XAxis = Object.assign({},com_axis,{
-                    data: ['2016','2017','2018','2019','2020'],
+                    data: ['PM2.5','PM10','NO2','SO2','O3'],
                     axisLabel: {
                         textStyle: {
                             color: "rgba(165, 182, 212, 0.6)", //坐标的字体颜色
@@ -30,31 +33,27 @@
                     }
                 });
                 const YAxis = Object.assign({},com_axis,{
-                    name: '(万件)',
+                    name: '(ug/m³)',
                     type: "value"
                 });
                 const series = [{
-                        name: '直接访问',
+                        name: '2019年',
                         type: 'bar',
                         barWidth: 12,
-                        data: [320, 332, 301, 334, 390, 330, 320]
+                        data: [320, 332, 301, 334, 390, 330, 320],
+                        itemStyle: bar_itemStyle
                     },
                     {
-                        name: '邮件营销',
+                        name: '2020年',
                         type: 'bar',
                         barWidth: 12,
-                        data: [120, 132, 101, 134, 90, 230, 210]
-                    },
-                    {
-                        name: '联盟广告',
-                        type: 'bar',
-                        barWidth: 12,
-                        data: [220, 182, 191, 234, 290, 330, 310]
+                        data: [120, 132, 101, 134, 90, 230, 210],
+                        itemStyle: bar_itemStyle
                     }
                 ]
                 const option = Object.assign({},baseOption,{xAxis: [XAxis]}, {yAxis: [YAxis]},{series});
                 this.yearlyOutputChart = this.$echarts.init(
-                    document.getElementById("outputChartId")
+                    document.getElementById("airSurveyChartId")
                 );
                 this.yearlyOutputChart.setOption(option);
             }
@@ -64,11 +63,11 @@
 
 <style lang="less" scoped>
     @import '@/assets/style/layout.less';
-    .yearly-output{
+    .air-survey{
         .panel(@height:200px);
         margin-top: 10px;
         flex-grow: 1;
-        #outputChartId{
+        #airSurveyChartId{
             height: 100%;
         }
     }

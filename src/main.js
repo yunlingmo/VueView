@@ -9,6 +9,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/style/reset.css';
 import './assets/style/common.less';
 
+// 全局组件fontIcon
+import MyIcon from'./components/fontIcon';
+Vue.component('my-icon', MyIcon)
+
 moment.locale('zh-cn');
 Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false
