@@ -41,7 +41,6 @@ export default{
         '$route':{
             handler(to){
                 this.currentRoute = to.name
-                console.log('currentRoute',this.currentRoute)
             },
             deep:true,
             immediate:true

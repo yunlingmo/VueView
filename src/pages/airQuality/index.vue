@@ -6,7 +6,7 @@
             <air-status-number></air-status-number>
         </div>
         <div class="right-panel">
-            <monitor-data></monitor-data>
+            <table-scope></table-scope>
             <air-quality-change></air-quality-change>
             <nice-city></nice-city>
         </div>
@@ -16,26 +16,20 @@
 <script>
     import airQualityInfo from './airQualityInfo'
     import airSurvey from './airSurvey'
-    
     import airStatusNumber from './airStatusNumber'
+    import tableScope from './tableScope'
     import niceCity from './niceCityAirQuality'
     import airQualityChange from './airQualityChange'
     
-
-    import monitorData from './monitorData'
-    // import monitorDataTwo from './monitorDataTwo'
     export default{
         name: 'airQuality',
         components: {
             airQualityInfo,
             airSurvey,
-
             airStatusNumber,
+            tableScope,
             niceCity,
-            airQualityChange,
-
-            monitorData,
-            // monitorDataTwo
+            airQualityChange,           
         },
         data(){
             return {}

@@ -33,7 +33,6 @@
                     labelShow: false
                 }
                 const option = pieChart(params);
-                console.log('option',option);
                 this.fireChart = this.$echarts.init(
                     document.getElementById("airStatusNumberChartId")
                 );
