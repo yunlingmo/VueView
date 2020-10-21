@@ -1,6 +1,6 @@
 let timeObject = null;
 const intervalFunction = function({parentBox, step, timer}) {
-    let topNumber = 0
+    let topNumber = parentBox.scrollTop
     return setInterval(function () {
         if (parentBox.scrollHeight - parentBox.clientHeight - parentBox.scrollTop < 10) {
             topNumber = 0

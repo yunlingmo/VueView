@@ -5,13 +5,15 @@
 </template>
 
 <script>
-    import { pieChart } from '@/assets/js/pieChart'
+    import { pieChart } from '@/assets/js/echartJS/pieChart'
+    import { tooltipScope } from '@/assets/js/echartJS/common'
     export default{
         name: 'fireProportion',
         components: {},
         data() {
             return {
                 fireChart: null,
+                fireInterval: null, 
                 title: '',
                 data:[
                         {value: 335, name: '直接访问'},
@@ -39,7 +41,16 @@
                     document.getElementById("fireChartId")
                 );
                 this.fireChart.setOption(option);
+                this.fireInterval = tooltipScope({
+                    seriesLength: this.data.length,
+                    myChart: this.fireChart
+                })()
             }
+        },
+        beforeDestroy() {
+            console.log('this.fireInterval', this.fireInterval)
+            clearInterval(this.fireInterval);
+            this.fireInterval = null;
         }
     }
 </script>

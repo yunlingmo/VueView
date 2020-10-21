@@ -18,6 +18,10 @@ export const com_charts = {
     },
     // 提示框
     tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        },
         textStyle: {
             fontSize: 16
         },

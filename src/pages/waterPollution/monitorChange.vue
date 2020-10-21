@@ -9,7 +9,7 @@
 
 <script>
     import optionSelect from '@/components/optionSelect'
-    import { com_charts, com_axis } from '@/assets/js/chartsCom'
+    import { com_charts, com_axis } from '@/assets/js/echartJS/chartsCom'
     export default{
         name: 'monitorChange',
         components:{

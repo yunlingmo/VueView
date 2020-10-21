@@ -5,11 +5,13 @@
 </template>
 
 <script>
-    import { com_charts, com_axis } from '@/assets/js/chartsCom'
+    import { com_charts, com_axis } from '@/assets/js/echartJS/chartsCom'
+    import { tooltipScope } from '@/assets/js/echartJS/common'
     export default{
         name: 'yearlyOutput',
         data(){
             return {
+                yearlyOutputInterval: null,
                 yearlyOutputChart: null,
             }
         },
@@ -57,7 +59,15 @@
                     document.getElementById("outputChartId")
                 );
                 this.yearlyOutputChart.setOption(option);
+                this.yearlyOutputInterval = tooltipScope({
+                    seriesLength: 5,
+                    myChart: this.yearlyOutputChart
+                })()
             }
+        },
+        beforeDestroy() {
+            clearInterval(this.yearlyOutputInterval);
+            this.yearlyOutputInterval = null;
         }
     }
 </script>

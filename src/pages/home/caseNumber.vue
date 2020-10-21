@@ -5,11 +5,13 @@
 </template>
 
 <script>
-    import { com_charts, com_axis } from '@/assets/js/chartsCom'
+    import { com_charts, com_axis, bar_itemStyle } from '@/assets/js/echartJS/chartsCom'
+    import { tooltipScope } from '@/assets/js/echartJS/common'
     export default{
         name: 'caseNumber',
         data(){
             return {
+                caseNumberInterval: null,
                 caseNumberChart: null,
             }
         },
@@ -49,12 +51,8 @@
                         name: '事件次数',
                         type: 'bar',
                         barWidth: 12,
-                        data: [320, 332, 301, 334, 390, 330, 320, 120, 132, 101, 134, 90],                       
-                        itemStyle: {
-                            normal: {
-                                color: "#619ef6"
-                            },
-                        }
+                        data: [320, 332, 301, 334, 390, 330, 320, 120, 132, 101, 134, 90],
+                        itemStyle: bar_itemStyle
                     }
                 ]
                 const option = Object.assign({},baseOption,{xAxis: [XAxis]}, {yAxis: [YAxis]},{series});
@@ -62,7 +60,15 @@
                     document.getElementById("caseNumberChartId")
                 );
                 this.caseNumberChart.setOption(option);
+                this.caseNumberInterval = tooltipScope({
+                    seriesLength: 12,
+                    myChart: this.caseNumberChart
+                })()
             }
+        },
+        beforeDestroy() {
+            clearInterval(this.caseNumberInterval);
+            this.caseNumberInterval = null;
         }
     }
 </script>

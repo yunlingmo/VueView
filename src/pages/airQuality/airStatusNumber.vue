@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import { pieChart } from '@/assets/js/pieChart'
+    import { pieChart } from '@/assets/js/echartJS/pieChart'
     export default{
         name: 'airStatusNumber',
         components: {},

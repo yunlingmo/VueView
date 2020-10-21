@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import { com_charts, com_axis, bar_itemStyle } from '@/assets/js/chartsCom'
+    import { com_charts, com_axis, bar_itemStyle } from '@/assets/js/echartJS/chartsCom'
     export default{
         name: 'airSurvey',
         data(){
