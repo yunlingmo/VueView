@@ -1,32 +1,38 @@
+let timeObject = null;
 const intervalFunction = function({parentBox, step, timer}) {
+    let topNumber = 0
     return setInterval(function () {
         if (parentBox.scrollHeight - parentBox.clientHeight - parentBox.scrollTop < 10) {
-            parentBox.scrollTop = 0;
+            topNumber = 0
         } else {
-            parentBox.scrollTop = parentBox.scrollTop + step;
+            topNumber +=  step
         }
+        parentBox.scrollTop = topNumber
       }, timer);
 }
 
 export const scrollFunction = function({parentId, step, timer}) {
     const parentBox = document.getElementById(parentId);
-    // const scrollBox = document.getElementById(scrollId);
-
+    // 没有滚动条不需要轮播
+    if (parentBox.scrollHeight <= parentBox.clientHeight) {
+        return;
+    }
     // 创建空白节点
     let  emptyDom = document.createElement('div');
     emptyDom.style.height = parentBox.clientHeight + 'px'
     parentBox.appendChild(emptyDom);
 
     // 定时器开启
-    let timeObject = timeObject = intervalFunction({ parentBox, step, timer })
+    timeObject = intervalFunction({ parentBox, step, timer })
 
     // 鼠标移入div时暂停滚动
     parentBox.onmouseover = function () {
-      clearInterval(timeObject);
+        clearInterval(timeObject);
     };
-
     // 鼠标移出div后继续滚动
     parentBox.onmouseout = function () {
         timeObject = intervalFunction({ parentBox, step, timer })
     };
+    return timeObject;
+    
 }

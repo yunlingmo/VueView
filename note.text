@@ -41,3 +41,4 @@
 2、requestanimationframe的使用；
 3、阿里图库的使用；
 4、vue.use 和vue.property的区别；
+5、具名插槽、作用域插槽

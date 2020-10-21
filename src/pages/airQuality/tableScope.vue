@@ -101,6 +101,43 @@
                         number: 80,
                         status: 'up',
                         change: 10
+                    },
+                    {
+                        name:'深圳',
+                        status: 'equal',
+                        number: 50,
+                        change: 0
+
+                    },
+                    {
+                        name:'上海',
+                        number: 20,
+                        status: 'up',
+                        change: 2
+                    },
+                    {
+                        name:'北京',
+                        number: 40,
+                        status: 'down',
+                        change: -1
+                    },
+                    {
+                        name:'广州',
+                        status: 'equal',
+                        number: 60,
+                        change: 20
+                    },
+                    {
+                        name:'天津',
+                        number: 20,
+                        status: 'down',
+                        change: 2
+                    },
+                    {
+                        name:'北京',
+                        number: 80,
+                        status: 'up',
+                        change: 10
                     }
                 ]
             }
@@ -122,10 +159,16 @@
         mounted(){
             this.$nextTick(()=>{
                 document.getElementsByClassName('mo-table')[0].getElementsByClassName('el-table__body-wrapper')[0].setAttribute('id', 'airQualityTableId');
-                this.tableInterval = scrollFunction({parentId:'airQualityTableId', step: 1, timer: 200 });
+                setTimeout(() => {
+                    this.tableInterval = scrollFunction({parentId:'airQualityTableId', step: 1, timer: 200 })
+                }, 1000) 
             })
         },
-        methods: {}
+        methods: {},
+        beforeDestroy() {
+            clearInterval(this.tableInterval);
+            this.tableInterval = null;
+        }
     }
 </script>
 

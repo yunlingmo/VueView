@@ -20,7 +20,8 @@ center, u, b, i {
     font-style: normal;
     font-size: 100%;
     font-family: CHINESE-BOLD;
-    vertical-align: baseline
+    vertical-align: baseline; 
+    box-sizing: border-box;
 }
 html, body, #app{
     width: 100%;

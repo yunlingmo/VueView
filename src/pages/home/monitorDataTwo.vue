@@ -123,8 +123,14 @@
         },
         mounted(){
             this.$nextTick(() => {
-                this.tableInterval = scrollFunction({parentId:'tableContentTwoId', step: 1, timer: 200 });
+                setTimeout(() => {
+                    this.tableInterval = scrollFunction({parentId:'tableContentTwoId', step: 1, timer: 200 })
+                }, 1000)
             });
+        },
+        beforeDestroy() {
+            clearInterval(this.tableInterval);
+            this.tableInterval = null;
         }
     }
 </script>
