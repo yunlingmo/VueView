@@ -8,13 +8,11 @@
 </template>
 
 <script>
-    // import panel from '@/components/panel'
     import monthSelect from '@/components/monthSelect'
     import calendar from './calendar'
     export default{
         name: 'airQualityCalendar',
         components: {
-            // panel,
             monthSelect,
             calendar   
         },

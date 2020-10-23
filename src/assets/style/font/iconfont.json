@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "17722944",
+      "name": "睫毛刷",
+      "font_class": "jiemaoshua",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "17722945",
+      "name": "沐浴乳",
+      "font_class": "muyuru",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "17722948",
+      "name": "美容仪",
+      "font_class": "meirongyi",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "17722950",
+      "name": "精华",
+      "font_class": "jinghua",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "17722952",
+      "name": "润唇膏",
+      "font_class": "runchungao",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "17722955",
+      "name": "洗面奶",
+      "font_class": "ximiannai",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "591724",
+      "name": "wxb品牌宝",
+      "font_class": "wxbpinpaibao",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "591727",
+      "name": "wxb搜索推广",
+      "font_class": "wxbsousuotuiguang",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
       "icon_id": "14435324",
       "name": "首页",
       "font_class": "shouye",

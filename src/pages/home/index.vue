@@ -5,11 +5,18 @@
             <fire-proportion></fire-proportion>
             <yearly-output></yearly-output>
         </div>
+        <!-- 图标按钮 -->
+        <div class="icon-btns">
+            <span @click="iconBtnClick">
+                <my-icon fontName="#iconwxbsousuotuiguang" fontSize="20"></my-icon>
+            </span>
+        </div>
         <div class="right-panel">
             <monitor-data></monitor-data>
             <monitor-data-two></monitor-data-two>
             <case-number></case-number>
         </div>
+        <air-dialog :dialogShow.sync="dialogShow"></air-dialog>
     </div>
 </template>
 
@@ -20,6 +27,7 @@
     import caseNumber from './caseNumber'
     import monitorData from './monitorData'
     import monitorDataTwo from './monitorDataTwo'
+    import airDialog from './airDialog'
     export default{
         name: 'home',
         components: {
@@ -28,21 +36,47 @@
             yearlyOutput,
             caseNumber,
             monitorData,
-            monitorDataTwo
+            monitorDataTwo,
+            airDialog
         },
         data(){
-            return {}
+            return {
+                dialogShow: false
+            }
         },
-        methods: {}
+        methods: {
+            iconBtnClick() {
+                this.dialogShow = !this.dialogShow
+            }
+        }
     }
 </script>
 
 <style lang="less" scoped>
     @import '@/assets/style/layout.less';
     .left-panel{
-        .panelBox(@width:554px);
+        .panelBox(@width:500px);
     }
     .right-panel{
-        .panelBox(@position: right; @width:560px);
+        .panelBox(@position: right; @width:500px);
+    }
+    .icon-btns{
+        float: left;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        span{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid rgba(79, 158, 253, 1);
+            background: #02102c;
+            color: #fcfdfe;
+            &:hover{
+                color: rgba(79, 158, 253, 1);
+            }
+        }
     }
 </style>

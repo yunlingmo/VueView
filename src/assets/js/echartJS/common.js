@@ -1,6 +1,6 @@
 const intervalFunction = function({currentIndex, seriesLength, myChart}) {
     return setInterval(function () {
-        console.log('xxxxxxxxxxxx',currentIndex)
+        // console.log('xxxxxxxxxxxx',currentIndex)
         // 取消之前高亮的图形
         myChart.dispatchAction({
             type: 'downplay',
