@@ -13,7 +13,8 @@
     "element-ui": "^2.13.2",
     "moment": "^2.29.1",
     "vue": "^2.6.11",
-    "vue-router": "^3.4.6"
+    "vue-router": "^3.4.6",
+    "webpack-bundle-analyzer": "^3.9.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

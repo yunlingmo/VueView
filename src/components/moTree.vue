@@ -37,7 +37,7 @@
 <style lang="less" scoped>
     .mo-tree{
         min-width: 200px;
-        font-size: 18px;
+        font-size: 16px;
         color: #CEDDFC;
         background: none;
         /deep/.el-tree-node__content {
@@ -60,23 +60,7 @@
                 &.is-focusable .el-checkbox__inner{
                     background-color: #409EFF;
                 }
-            }
-            
+            }           
         }
-        // /deep/.el-checkbox__input.is-checked .el-checkbox__inner{
-        //     background-color: #409EFF;
-        // }
-        // /deep/.el-checkbox__input{
-        //     padding: 1px;
-        //     border: 1px solid #409EFF;
-        //     .el-checkbox__inner{
-        //         border: none;
-        //         background-color: transparent;
-        //     }
-        // }
-        // /deep/.el-checkbox__inner {
-        //     border-color: none;
-        //     background-color: transparent;
-        // }
     }
 </style>

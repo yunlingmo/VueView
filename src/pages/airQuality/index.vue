@@ -115,7 +115,7 @@
                 }
             ]
             return {
-                treeData: JSON.parse(JSON.stringify(data))
+                treeData: data
             }
         },
         methods: {}
