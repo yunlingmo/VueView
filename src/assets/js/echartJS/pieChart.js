@@ -15,7 +15,8 @@ export const pieChart = function({title,color,data,radiu,centerData, labelShow=t
         },
         tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b}: {c} ({d}%)'
+            formatter: '{a} <br/>{b}: {c} ({d}%)',
+            transitionDuration: 0//加上这个可以防止抖动
         },
         // 暂时隐藏
         legend: {

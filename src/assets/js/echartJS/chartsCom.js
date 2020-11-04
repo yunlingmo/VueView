@@ -25,6 +25,7 @@ export const com_charts = {
         textStyle: {
             fontSize: 16
         },
+        transitionDuration: 0//加上这个可以防止抖动
     },
     // 图例
     legend: {        

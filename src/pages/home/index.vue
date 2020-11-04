@@ -21,6 +21,7 @@
 </template>
 
 <script>
+    import { getTestInfo } from '@/request/api/home'// 导入我们的api接口
     import airQualityCalendar from './airQualityCalendar'
     import fireProportion from './fireProportion'
     import yearlyOutput from './yearlyOutput'
@@ -44,9 +45,16 @@
                 dialogShow: false
             }
         },
+        mounted(){
+            this.getInfo()
+        },
         methods: {
             iconBtnClick() {
                 this.dialogShow = !this.dialogShow
+            },
+            async getInfo() {
+                const res = await getTestInfo()
+                console.log('resxxxxxxxxx',res)
             }
         }
     }

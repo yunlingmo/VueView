@@ -41,9 +41,9 @@
         },
         methods: {   
             initChart() {
-                const baseOption = Object.assign(com_charts,{
+                const baseOption = Object.assign({
                     color: ['#00E9EA']
-                });
+                }, com_charts);
                 const XAxis = Object.assign({},com_axis,{
                     data: ['北京','上海','深圳','广州','杭州','南宁','珠江','天津','海口'],
                     axisLabel: {

@@ -19,9 +19,9 @@
         methods: {   
             initChart() {
                 // const 
-                const baseOption = Object.assign(com_charts,{
+                const baseOption = Object.assign({
                     color: ['#509EFD', '#00E9EA']
-                });
+                }, com_charts);
                 const XAxis = Object.assign({},com_axis,{
                     data: ['PM2.5','PM10','NO2','SO2','O3'],
                     axisLabel: {

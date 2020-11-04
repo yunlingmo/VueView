@@ -20,7 +20,7 @@
         },
         methods: {   
             initChart() {
-                const baseOption = Object.assign(com_charts,{});
+                const baseOption = Object.assign({}, com_charts);
                 const XAxis = Object.assign({},com_axis,{
                     data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
                     axisLabel: {

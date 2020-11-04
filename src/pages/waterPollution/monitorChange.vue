@@ -41,9 +41,9 @@
         },
         methods: {   
             initChart() {
-                const baseOption = Object.assign(com_charts,{
+                const baseOption = Object.assign({
                     color: ['#FFDD77','#4F9EFD']
-                });
+                }, com_charts);
                 const XAxis = Object.assign({},com_axis,{
                     data: ['15日','16日','17日','18日','19日','20日','21日']
                 });

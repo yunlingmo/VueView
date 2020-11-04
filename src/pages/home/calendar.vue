@@ -13,6 +13,9 @@
 </template>
   
 <script>
+import moment from 'moment'
+import { monthFirstDay, monthLastDay } from '@/utils/time'
+import { getCalendarInfo }  from '@/request/api/home'// 导入我们的api接口
 export default {
     name: 'calendar',
     props: {
@@ -29,8 +32,12 @@ export default {
                 slight: ['01', '04','15','22'],
                 serious: ['03','05','12','18','27']
             },
-            // valueMonth: new Date()
+            statusObject: {},
+            valueMonth: new Date()
         }
+    },
+    mounted(){
+        this.getCalendarInfo();
     },
     methods: {
         dateClass(day) {
@@ -40,6 +47,18 @@ export default {
                     return `${key}-day`
                 }
             }
+        },
+        // 从后台获取日历状态信息
+        async getCalendarInfo() {
+            const startDay = monthFirstDay(this.valueMonth, 'YYYY-MM-DD');
+            const endDay = monthLastDay(this.valueMonth, 'YYYY-MM-DD');
+            const res = await getCalendarInfo({startDay, endDay})
+            console.log('mmmmmmmmmmmmmmmmmm', res)
+            res.map(item => {
+                this.statusObject[item.status].push(moment(item.date).day())
+            })
+            console.log('this.statusObject', this.statusObject)
+
         }
     }
 }

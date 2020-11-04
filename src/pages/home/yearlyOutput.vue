@@ -20,7 +20,7 @@
         },
         methods: {   
             initChart() {
-                const baseOption = Object.assign(com_charts,{});
+                const baseOption = Object.assign({}, com_charts);
                 const XAxis = Object.assign({},com_axis,{
                     data: ['2016','2017','2018','2019','2020'],
                     axisLabel: {
