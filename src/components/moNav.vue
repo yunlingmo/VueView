@@ -3,14 +3,12 @@
         <el-menu
             default-active="home"
             class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose"
             background-color="#344058"
             text-color="#fff"
             active-text-color="#ffd04b"
             :collapse-transition="false"
             :collapse="isCollapse">
-            <child-component :menus="menuDate" :isCollapse="isCollapse"></child-component>
+            <child-component :menus="menuDate" :isCollapse="isCollapse" @menuItemClick="menuItemClick"></child-component>
         </el-menu>
         <div class="btn-list">
             <span :label="true" v-show="isCollapse" @click="isCollapse = !isCollapse"><i class="el-icon-s-unfold"></i></span>
@@ -39,17 +37,21 @@
                                     <i v-if="menu.icon" :class="menu.icon"></i>
                                     <span :class="" :class="{'close-item': isCollapse}">{{menu.name}}</span>
                                 </template>
-                                <child-component :menus="menu.children"></child-component>
+                                <child-component :menus="menu.children" @menuItemClick="menuItemClick"></child-component>
                             </el-submenu>
                         </template>
                         <template v-else>
-                            <el-menu-item :index="menu.value">
+                            <el-menu-item :index="menu.value" @click="menuItemClick(menu)">
                                 <i v-if="menu.icon" :class="menu.icon"></i>
-                                <span slot="title" :class="{'close-item': isCollapse}">{{menu.name}}</span>
+                                <span slot="title" :class="{'close-item': isCollapse}" >{{menu.name}}</span>
                             </el-menu-item>
                         </template>
                     </template></div>`,
-
+        methods: { 
+            menuItemClick(menu){
+                this.$emit('menuItemClick', menu)
+            }
+        }
     };
 
     export default{
@@ -62,7 +64,7 @@
                 isCollapse: false,
                 menuDate: [
                     {
-                        name: '主页',
+                        name: '功能页',
                         value: 'home',
                         icon: 'el-icon-s-home'
                     },
@@ -72,17 +74,17 @@
                         icon: 'el-icon-s-grid',
                         children: [
                             {
-                                name: '221' ,
-                                value: '021'
+                                name: '表格' ,
+                                value: 'table'
                             },
                             {
-                               name: '222',
-                                value: '022',
+                               name: '分页', 
+                                value: 'pagination'
                             },
                             {
-                               name: '223', 
-                                value: '023'
-                            }
+                               name: '表单',
+                                value: 'form',
+                            },
                         ]
                     },
                     {
@@ -91,16 +93,16 @@
                         icon: 'el-icon-document',
                         children: [
                             {
-                               name: '331' , 
-                                value: '031'
+                               name: '日程安排' , 
+                                value: 'schedule'
                             },
                             {
-                               name: '332', 
-                                value: '032' 
+                               name: '地图', 
+                                value: 'map' 
                             },
                             {
-                               name: '333' , 
-                                value: '033'
+                               name: '组织架构图' , 
+                                value: 'organizationChart'
                             }
                         ]
                     },
@@ -126,23 +128,22 @@
                 ]
             }
         },
-        computed: {
-            xx() {
-                return 'yy'
-            }
-        },
+        computed: {},
         methods: {
             handleOpen(key, keyPath) {
                 console.log(key, keyPath);
             },
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
+            },
+            menuItemClick(menu){
+                this.$router.push({name: menu.name})
             }
         }
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .nav{
         width: 300px;
         background-color: #344058;

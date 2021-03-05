@@ -48,12 +48,13 @@ export const com_charts = {
 export const com_axis = {
     //坐标轴名称距离
     nameGap: 16,
+    splitNumber: 5,
     // 坐标轴名称显示位置
     nameLocation: 'end',
     // 坐标轴名称字体样式
     nameTextStyle: {
         align: "right",
-        fontSize: 16,
+        fontSize: 14,
         color: 'rgba(165, 182, 212, 0.6)',
 
     },
@@ -69,8 +70,8 @@ export const com_axis = {
     splitLine: {
         show: false,
         lineStyle: {
-            color: ['rgba(255,255,255,.63)', 'rgba(255,255,255,.33)'],
-            tyle: 'dashed'
+            color: ['rgba(255,255,255,.1)'],
+            tyle: 'solid'
         }
     },
     // 标签名称

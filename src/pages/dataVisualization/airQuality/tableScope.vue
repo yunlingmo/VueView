@@ -1,6 +1,6 @@
 <template>
     <Panel class="monitor-data" panelTitle="表格插槽">
-        <mo-table :headerData="headerData" :tableData="tableData">
+        <mo-table :headerData="headerData" :tableData="tableData" :mergeRowName="['name']">
             <!-- 排名 -->
             <template v-slot:slort="{data}">
                 <span class="slort-class" :style="slortStyle(data.index)">{{data.index}}</span>
@@ -39,16 +39,15 @@
             return {
                 tableInterval: null,
                 indexColor: ['rgba(234, 101, 96,', 'rgba(240, 150, 80,', 'rgba(251, 221, 135,'],
+                mergeRowName: ['name'], // 合并列
                 headerData: [
                     {
                         label: '排名',
-                        // width: 60,
                         prop:'slort',
                         slotName: 'slort'
                     },
                     {
                         label: '城市名称',
-                        // width: 80,
                         prop:'name'
                     },
                     {
@@ -65,6 +64,20 @@
                     }
                 ],
                 tableData: [
+                    {
+                        name:'深圳',
+                        status: 'equal',
+                        number: 50,
+                        change: 0
+
+                    },
+                    {
+                        name:'深圳',
+                        status: 'equal',
+                        number: 50,
+                        change: 0
+
+                    },
                     {
                         name:'深圳',
                         status: 'equal',

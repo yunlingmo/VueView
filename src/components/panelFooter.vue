@@ -3,7 +3,7 @@
         <div
             :class="{'nav-item': true, 'active-nav': currentRoute === item.path}"
             v-for="item in navData" :key="item.path"
-            @click="linkTo(item.path)">
+            @click="linkTo(item.name)">
             <img src="../static/images/nav_bg.png" alt="">
             <span>
                 <my-icon :fontName="item.icon" fontSize="20"></my-icon>
@@ -33,6 +33,11 @@ export default{
                     name: '水污染',
                     path: 'waterPollution',
                     icon: '#icondi'
+                },
+                {
+                    name: '功能页',
+                    path: 'principal',
+                    icon: '#icondi'
                 }
             ]
         }
@@ -50,8 +55,8 @@ export default{
 
     },
     methods: {
-        linkTo(path) {
-            this.$router.push({ path})
+        linkTo(name) {
+            this.$router.push({ name: name})
         }
     }
 }
